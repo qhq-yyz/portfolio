@@ -77,7 +77,7 @@
   .box h5{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:.03em}
   .box p{font-size:13.5px;margin-bottom:0;color:var(--ink-2)}
 
-  .chain{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;color:var(--accent);background:var(--accent-2);padding:12px 16px;border-radius:8px;overflow-x:auto;white-space:nowrap;margin:14px 0}
+  .chain{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;color:var(--accent);background:var(--accent-2);padding:12px 16px;border-radius:8px;margin:14px 0;line-height:1.9}
 
   .note{font-size:13px;color:var(--ink-3);border-left:3px solid var(--line);padding-left:14px;margin-top:18px}
 
@@ -202,7 +202,7 @@
   <div class="card card-accent">
     <h4 style="margin-top:0">技术实现 · 配置与逻辑分离</h4>
     <p>叙事内容全部落在纯数据文件（<code>story_outline.lua</code> / <code>WeeksAct1-3.lua</code>），不依赖任何模块，由各系统单向读取：</p>
-    <div class="chain">剧情圣经（纯数据） → StoryManager 装载 → NPCManager / ReasoningSystem / KarmaLedger / EndingManager / FactionModel 读取 → 表现层</div>
+    <div class="chain">剧情圣经（纯数据） → StoryManager 装载 →<br>NPCManager · ReasoningSystem · KarmaLedger · EndingManager · FactionModel 读取 → 表现层</div>
     <ul style="margin-bottom:0">
       <li><strong>音频分轨调度：</strong>BGM 随周次切换，雨声为独立轨（<code>rainDensity ≥ 0.5</code> 淡入、低于则淡出，与 BGM 叠加）；脚步音按移动速度归一化节流；付印 / 纸张 / 钟声挂在事件上；犬吠夜间 20–40s 随机</li>
       <li><strong>边界与叙事遮挡分层：</strong>外层 8 块隐形空气墙 + 地下兜底平面保证走不出去；内层用岩壁锯齿带、松林剪影、环河山嘴、贴地漂移雾幕做视觉收口，第三幕监听周次事件加浓雾气——<strong>用美术手段限制玩家视野，而不是用墙</strong></li>
